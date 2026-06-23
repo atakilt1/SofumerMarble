@@ -36,9 +36,9 @@ namespace SofumerMarble.Controllers
             {
                 _db.ApplicationType.Add(obj);
                 _db.SaveChanges();
+                return RedirectToAction("Index");
             }
-
-            return RedirectToAction("Index");
+            return View(obj);
         }
     }
 }

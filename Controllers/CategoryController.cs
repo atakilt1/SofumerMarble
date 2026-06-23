@@ -37,7 +37,7 @@ namespace SofumerMarble.Controllers
             {
                 _db.Category.Add(category);
                 _db.SaveChanges();
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
 
             return View(category);
