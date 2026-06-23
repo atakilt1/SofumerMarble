@@ -1,24 +1,18 @@
-@model Category
+@model ApplicationType
 
 @{
-    ViewData["Title"] = "Create Category";
+    ViewData["Title"] = "Create Application Type";
 }
 
-<h2>Create Category</h2>
+<h2>Create Application Type</h2>
 
 <form method="post" asp-action="Create">
-     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+     
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="DisplayOrder" class="form-label"></label>
-        <input asp-for="DisplayOrder" class="form-control" />
-        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-    </div>
+    </div>    
 
     <button type="submit" class="btn btn-primary">
         Create
