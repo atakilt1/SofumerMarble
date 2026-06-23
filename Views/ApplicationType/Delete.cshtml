@@ -1,0 +1,32 @@
+@model ApplicationType
+
+@{
+    ViewData["Title"] = "Delete Application Type";
+}
+
+<h2>Delete Application Type</h2>
+
+<form method="post" asp-action="DeletePost">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input asp-for="Id" hidden />
+    
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" disabled/>
+    </div>    
+
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Back to List
+    </a>
+
+</form>
+
+@section Scripts {
+    @{ <partial name="_ValidationScriptsPartial" /> }
+}
