@@ -8,6 +8,9 @@ obj/
 *.so
 *.dylib
 
+# Ignore a specific folder inside wwwroot
+**/wwwroot/fontawesome
+
 ## Ignore user-specific files
 *.user
 *.suo

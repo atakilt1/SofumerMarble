@@ -9,7 +9,7 @@
         <h2>Category List</h2>
 
         <a asp-controller="Category" asp-action="Create" class="btn btn-success">
-            <i class="bi bi-plus-circle"></i> New Category
+            <i class="fas fa-plus"></i> &nbsp; New Category
         </a>
     </div>
 
@@ -33,7 +33,7 @@
                         <a asp-action="Edit"
                            asp-route-id="@category.Id"
                            class="btn btn-warning btn-sm">
-                            Edit
+                            <i class="fas fa-edit"></i> 
                         </a>
 
                         <a asp-action="Details"
@@ -45,7 +45,7 @@
                         <a asp-action="Delete"
                            asp-route-id="@category.Id"
                            class="btn btn-danger btn-sm">
-                            Delete
+                            <i class="fas fa-trash-alt"></i> 
                         </a>
                     </td>
                 </tr>
