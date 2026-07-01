@@ -17,10 +17,8 @@ namespace SofumerMarble.Models
 
         [Range(0.1, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
         public decimal Price { get; set; }
-
-        [Required]
-        [Url(ErrorMessage = "Invalid image URL")]
-        public string Image { get; set; }
+               
+        public string? Image { get; set; }
 
         [Display(Name = "Category Type")]
         
