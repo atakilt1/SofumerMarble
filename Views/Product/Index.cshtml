@@ -20,9 +20,9 @@
                 <tr>
                     <th width="100">Image</th>
                     <th>Name</th>
-                    <th>Description</th>
                     <th width="120">Price</th>
                     <th width="180">Category</th>
+                    <th width="180">Application Type</th>
                     <th width="200">Actions</th>
                 </tr>
             </thead>
@@ -43,15 +43,14 @@
                         </td>
 
                         <td class="align-middle">
-                            @product.Description
-                        </td>
-
-                        <td class="align-middle">
                             @product.Price.ToString("C")
                         </td>
 
                         <td class="align-middle">
                             @product.Category?.Name
+                        </td>
+                        <td class="align-middle">
+                            @product.ApplicationType?.Name
                         </td>
 
                         <td class="align-middle">

@@ -35,6 +35,11 @@
     </div>
 
     <div class="mb-3">
+        <label asp-for="ApplicationTypeId" class="form-label"></label>
+        <input asp-for="ApplicationType.Name" class="form-control" disabled />
+    </div>
+
+    <div class="mb-3">
         Image       
 
         @if (Model.Id != 0 && !string.IsNullOrEmpty(Model.Image))

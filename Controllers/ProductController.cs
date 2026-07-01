@@ -25,7 +25,9 @@ namespace SofumerMarble.Controllers
         public IActionResult Index()
         {
             IEnumerable<Product> objList  = 
-                _db.Product.Include(c => c.Category).ToList();
+                _db.Product.Include(c => c.Category)
+                           .Include(a => a.ApplicationType)
+                           .ToList();
 
             return View(objList);
         }
@@ -40,7 +42,12 @@ namespace SofumerMarble.Controllers
                 {
                         Text = i.Name,
                         Value = i.Id.ToString()
-                })
+                }),
+                ApplicationTypeSelectList = _db.ApplicationType.Select(i => new SelectListItem
+                {
+                        Text = i.Name,
+                        Value = i.Id.ToString()
+                }),
             };
             
             if(id == null || id == 0)
@@ -128,6 +135,12 @@ namespace SofumerMarble.Controllers
                 Value = i.Id.ToString()
             });
 
+            productVM.ApplicationTypeSelectList = _db.ApplicationType.Select(i => new SelectListItem
+            {
+                Text = i.Name,
+                Value = i.Id.ToString()
+            });
+
             return View(productVM);
         }
 
@@ -140,7 +153,10 @@ namespace SofumerMarble.Controllers
             }
 
             //eager loading
-            Product product = _db.Product.Include(u=>u.Category).FirstOrDefault(p=>p.Id == id);
+            Product product = _db.Product
+                                 .Include(u => u.Category)
+                                 .Include(a => a.ApplicationType)
+                                 .FirstOrDefault(p=>p.Id == id);
 
             if (product == null)
             {

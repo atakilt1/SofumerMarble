@@ -11,7 +11,8 @@ namespace SofumerMarble.Models
         [Required(ErrorMessage = "Product name is required")]
          [StringLength(100, MinimumLength = 3)]
         public string Name { get; set; }
-
+        public string ShortDesc { get; set; }
+        
         [Required]
         public string Description { get; set; }
 
@@ -27,5 +28,13 @@ namespace SofumerMarble.Models
 
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
+
+        [Display(Name = "Application Type")]
+        
+        [Required]
+        public int ApplicationTypeId { get; set; }
+
+        [ForeignKey("ApplicationTypeId")]
+        public virtual ApplicationType ApplicationType { get; set; }
     }
 }
